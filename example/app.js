@@ -7,4 +7,6 @@ var AWS = require('../lib/AWS').AWS;
 
 var aws = new AWS();
 
-console.dir(AWS);
+console.dir(aws.currentRegion());
+var s3 = aws.getS3Client();
+console.dir(s3);
