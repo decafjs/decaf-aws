@@ -17,6 +17,6 @@
   "private"     : "false",
   "dependencies": {
     "decaf"            : "decafjs/decaf#master",
-    "decaf-aws"        : "decafjs/decaf-aws#master"
+    "decaf-aws"        : "file:///Users/mschwartz/github/decafjs/decaf-aws/.git"
   }
 }
