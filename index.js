@@ -1,13 +1,13 @@
-/**
+/*@ d
  * AWS Support for Decaf
  * @author Alex Lazar
- *
- * */
+ */
 
- /*global decaf, require */
+/*global decaf, require */
 
 "use strict";
 
 decaf.extend(exports, {
-    AmazonS3     : require('lib/AmazonS3').AmazonS3
+    AWS      : require('lib/AWS').AWS,
+    AmazonS3 : require('lib/AmazonS3').AmazonS3
 });
