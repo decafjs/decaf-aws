@@ -2,11 +2,19 @@
  * Created by mschwartz on 4/27/15.
  */
 
-require.paths.unshift('..');
-var AWS = require('../lib/AWS').AWS;
+var AWS = require('decaf-aws').AWS,
+    aws = new AWS();
 
-var aws = new AWS();
-
-console.dir(aws.currentRegion());
+console.dir(aws.region);
+debugger;
 var s3 = aws.getS3Client();
-console.dir(s3);
+
+console.log('creating bucket');
+debugger
+var region = s3.createBucket('decaf-bucket-test');
+console.dir(region);
+
+console.log('uploading bower.json');
+s3.putFilePublic('decaf-bucket-test', 'foo', 'bower.json');
+
+console.log(s3.getUrl('decaf-bucket-test', 'foo'));
