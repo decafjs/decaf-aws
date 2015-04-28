@@ -6,11 +6,9 @@ var AWS = require('decaf-aws').AWS,
     aws = new AWS();
 
 console.dir(aws.region);
-debugger;
 var s3 = aws.getS3Client();
 
 if (arguments[1] === 'delete') {
-    console.dir(s3.prototype);
     s3.remove('decaf-bucket-test', 'foo');
     console.log('deleted');
 }
