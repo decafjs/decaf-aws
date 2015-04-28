@@ -23,3 +23,4 @@ else {
 
     console.log('URL to uploaded oject: ' + s3.decafBucketTest.url('foo'));
 }
+console.dir(s3.decafBucketTest.list());
