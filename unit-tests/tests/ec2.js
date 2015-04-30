@@ -6,7 +6,7 @@ var ec2 = aws.getEC2Client();
 
 suite('ec2', function () {
     test('describe-security-groups', function() {
-        console.dir(ec2.describeSecurityGroups);
+        console.dir(ec2.describeSecurityGroups());
     });
 
     //test('describe-instances', function () {
