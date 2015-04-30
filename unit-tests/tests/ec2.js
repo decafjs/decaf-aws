@@ -10,16 +10,31 @@ suite('ec2', function () {
     });
 
     test('create-security-group', function() {
-        console.dir(ec2.createSecurityGroup('testgroup', {
+        var groupId = ec2.createSecurityGroup('testgroup', {
             description: 'unit test group',
             inbound: [
-                {}
+                {
+                    protocol: 'tcp',
+                    fromPort: 22,
+                    toPort: 22,
+                    ipRange: [
+                        '0.0.0.0/0'
+                    ]
+                }
             ],
             outbound: [
                 {}
             ]
-        }));
+        });
+        console.log('security groups');
+        console.dir(ec2.describeSecurityGroups());
+
+        console.log('deleteing security group ' + groupId);
+        ec2.removeSecurityGroup(groupId);
+        console.log('security groups');
+        console.dir(ec2.describeSecurityGroups());
     });
+
     //test('describe-instances', function () {
     //    console.dir(ec2.describeInstances());
     //});
