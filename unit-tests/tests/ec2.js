@@ -10,14 +10,21 @@ suite('ec2', function () {
     });
 
     test('run instances', function () {
-        var instances = ec2.runInstances({
-            amiId        : 'ami-1ecae776',
-            instanceType : 't2.small',
-            keyPairName: 'test-keypair'
-        });
+        var instances  = ec2.runInstances({
+                amiId        : 'ami-1ecae776',
+                instanceType : 't2.small',
+                keyPairName  : 'test-keypair'
+            }),
+            instanceId = instances[0].instanceId;
         console.dir(instances);
-        console.log('waiting for instance to be running');
-        ec2.waitForInstance(instances[0].instanceId, 'running');
-        console.log('Instance ' + instances[0].instanceId + ' is now running');
+        console.log('waiting for instance ' + instanceId + ' to be running');
+        ec2.waitForInstance(instanceId, 'running');
+        console.log('Instance ' + instanceId + ' is now running');
+
+        console.log('terminating instance ' + instanceId);
+        ec2.terminateInstance(instanceId);
+        console.log('waiting for instance ' + instanceId + ' to be terminated');
+        ec2.waitForInstance(instanceId, 'terminated');
+        console.log('Instance ' + instanceId + ' is now terminated');
     });
 });
