@@ -9,4 +9,4 @@ var AWS = require('decaf-aws').AWS,
 
 console.log('Selected region: ' + aws.region);
 
-test_main(tests);
+test_main('tests');

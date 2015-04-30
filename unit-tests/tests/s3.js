@@ -27,7 +27,7 @@
     suite('s3-remove', function () {
         console.log('deleting item foo');
         s3.decafBucketTest.remove('foo');
-        console.dir(s3.listBuckets());
+        console.dir(s3.decafBucketTest.listItems());
     });
 
 }());
