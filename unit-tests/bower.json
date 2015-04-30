@@ -17,10 +17,11 @@
   "private": "false",
   "cwd": ".",
   "dependencies": {
-    "decaf": "decafjs/decaf#master",
+    "decaf": "/Users/mschwartz/github/decafjs/decaf/.git#master",
     "decaf-aws": "/Users/mschwartz/github/decafjs/decaf-aws/.git"
   },
   "unused" : {
+    "decaf": "decafjs/decaf#master",
     "decaf-aws": "decafjs/decaf-aws#master"
   }
 }
