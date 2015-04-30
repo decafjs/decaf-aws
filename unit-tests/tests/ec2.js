@@ -9,6 +9,17 @@ suite('ec2', function () {
         console.dir(ec2.describeSecurityGroups());
     });
 
+    test('create-security-group', function() {
+        console.dir(ec2.createSecurityGroup('testgroup', {
+            description: 'unit test group',
+            inbound: [
+                {}
+            ],
+            outbound: [
+                {}
+            ]
+        }));
+    });
     //test('describe-instances', function () {
     //    console.dir(ec2.describeInstances());
     //});
