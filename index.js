@@ -9,5 +9,5 @@
 
 decaf.extend(exports, {
     AWS      : require('lib/AWS').AWS,
-    S3Client : require('lib/S3Client').S3Client
+    S3Client : require('lib/S3Client')
 });
